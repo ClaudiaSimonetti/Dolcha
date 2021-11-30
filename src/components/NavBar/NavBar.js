@@ -2,6 +2,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import { FaCookieBite } from 'react-icons/fa';
+import CartWidget from './CartWidget';
 
 function NavBar(){
     return(
@@ -17,6 +18,7 @@ function NavBar(){
                     <Nav.Link href="#link">Muffins</Nav.Link>
                     <Nav.Link href="#link">Budines</Nav.Link>
                 </Nav>
+                <CartWidget />    
             </Navbar.Collapse>
         </Container>
     </Navbar>
