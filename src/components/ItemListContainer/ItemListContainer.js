@@ -4,6 +4,7 @@ import ItemList from '../ItemList/ItemList';
 import { CircularProgress } from "@material-ui/core";
 
 
+
 function ItemListContainer({greeting}){
 
     const [productsDB, setProducts]=useState([])
@@ -12,7 +13,7 @@ function ItemListContainer({greeting}){
     useEffect(()=>{
         getFetch
         .then(response=>setProducts(response))
-        .catch(error=>console.log(error))
+        .catch(error=>alert("Ha ocurrido un error", error))
         .finally(()=>setLoading(false))
     },[])
 
