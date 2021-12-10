@@ -40,22 +40,22 @@ function ItemDetail({itemDetailDB}){
                     <Grid container spacing={0}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="img" src={itemDetailDB[0].image} />
+                                <img className={classes.img} alt="img" src={itemDetailDB.image} />
                             </ButtonBase>
                         </Grid>
                         <Grid item xs={12} lg={12} sm container>
                             <Grid item xs container direction="column" spacing={2}>
                             <Grid item xs>
-                                <Typography gutterBottom variant="subtitle1">{itemDetailDB[0].name}</Typography>
-                                <Typography variant="body2" gutterBottom>{itemDetailDB[0].description}</Typography>
-                                <Typography variant="body2" color="textSecondary">{itemDetailDB[0].stock} unidades disponibles</Typography>
+                                <Typography gutterBottom variant="subtitle1">{itemDetailDB.name}</Typography>
+                                <Typography variant="body2" gutterBottom>{itemDetailDB.description}</Typography>
+                                <Typography variant="body2" color="textSecondary">{itemDetailDB.stock} unidades disponibles</Typography>
                             </Grid>
                                 <Grid item>
                                     <Typography variant="body2" style={{ cursor: 'pointer' }}>Añadir</Typography>
                                 </Grid>
                             </Grid>
                             <Grid item>
-                                <Typography variant="subtitle1">$ {itemDetailDB[0].price}</Typography>
+                                <Typography variant="subtitle1">$ {itemDetailDB.price}</Typography>
                             </Grid>
                         </Grid>
                     </Grid>

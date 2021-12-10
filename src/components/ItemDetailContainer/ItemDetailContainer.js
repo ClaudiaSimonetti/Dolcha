@@ -3,18 +3,22 @@ import {useState, useEffect} from 'react';
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 function ItemDetailContainer(){
-    const [item, setItem]=useState({});
+    const [item, setItem]=useState({})
+    const [loading, setLoading]=useState(true)
+    
 
 
 
     useEffect(()=>{
         getOneProduct
         .then(response=>setItem(response))
+        .finally(()=>setLoading(false))
+
     })
 
     return(
         <div>
-        <ItemDetail itemDetailDB={item}/>
+        {loading ? false : <ItemDetail itemDetailDB={item}/>}
         </div>
     )
 }
