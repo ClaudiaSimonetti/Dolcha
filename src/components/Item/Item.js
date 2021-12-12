@@ -5,8 +5,9 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import ItemCount from '../ItemListContainer/ItemCount';
-
+// import ItemCount from '../ItemListContainer/ItemCount';
+import {Link} from 'react-router-dom';
+import './Item.css';
 
 
 
@@ -32,14 +33,15 @@ function Item({product}){
                         title={product.name}
                     />
                     <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">{product.name}</Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">{product.description}</Typography>
+                        <Typography className="textCard" gutterBottom variant="h5" component="h2">{product.name}</Typography>
+                        <Typography className="textCard" variant="body2" color="textSecondary" component="p">{product.description}</Typography>
                         <Typography variant="body2" color="textSecondary" component="p">Precio: $ {product.price}</Typography>
                         <Typography variant="body2" color="textSecondary" component="p">Stock: {product.stock} unidades</Typography>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <ItemCount productStock={product.stock}/>
+                <Link className="text-link-verDetalle" to={`/detalle/${product.id}`}><Typography variant="body2" style={{ cursor: 'pointer' }}>+ VER DETALLE</Typography></Link>
+                    {/* <ItemCount productStock={product.stock}/> */}
                 </CardActions>  
             </Card>
         </div>

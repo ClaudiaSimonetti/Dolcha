@@ -1,0 +1,15 @@
+.text-link-verDetalle{
+    text-decoration: inherit;
+    color: black
+}
+
+.text-link-verDetalle:hover{
+    color: lightsteelblue;
+}
+
+.textCard{
+    text-transform: lowercase;
+}
+.textCard:first-letter{
+    text-transform: uppercase;
+}

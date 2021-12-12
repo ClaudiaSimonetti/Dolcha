@@ -3,22 +3,25 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import { FaCookieBite } from 'react-icons/fa';
 import CartWidget from './CartWidget';
+import {Link} from 'react-router-dom';
+import './NavBar.css';
+
 
 function NavBar(){
     return(
     <Navbar bg="light" expand="lg">
         <Container>
-            <Navbar.Brand href="#home"><FaCookieBite /> Dolcha</Navbar.Brand>
+            <Navbar.Brand className='text-link' href=""><FaCookieBite /> Dolcha</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#link">Tortas</Nav.Link>
-                    <Nav.Link href="#link">Galletas</Nav.Link>
-                    <Nav.Link href="#link">Muffins</Nav.Link>
-                    <Nav.Link href="#link">Budines</Nav.Link>
+                    <Link className='text-link' to="/" href="">Home</Link>
+                    <Link className='text-link' to="/categoria/torta" href="#link">Tortas</Link>
+                    <Link className='text-link' to="/categoria/galleta" href="">Galletas</Link>
+                    <Link className='text-link' to="/categoria/muffin" href="">Muffins</Link>
+                    <Link className='text-link' to="/categoria/macarron" href="">Macarrones</Link>
                 </Nav>
-                <CartWidget />    
+                <Link className='text-link' to="/cart"><CartWidget /> </Link>    
             </Navbar.Collapse>
         </Container>
     </Navbar>
