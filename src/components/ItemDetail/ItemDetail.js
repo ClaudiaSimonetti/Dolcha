@@ -55,7 +55,7 @@ function ItemDetail({itemDetailDB}){
                         <Grid item xs={12} lg={12} sm container>
                             <Grid item xs container direction="column" spacing={2}>
                             <Grid item xs>
-                                <Typography className="textCard" gutterBottom variant="subtitle1">{itemDetailDB.name}</Typography>
+                                <Typography className="textCard" gutterBottom variant="h5">{itemDetailDB.name}</Typography>
                                 <Typography className="textCard" variant="body2" gutterBottom>{itemDetailDB.description}</Typography>
                                 <Grid item>
                                     <Typography variant="subtitle1">$ {itemDetailDB.price}</Typography>

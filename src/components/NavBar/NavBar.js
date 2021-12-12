@@ -11,7 +11,7 @@ function NavBar(){
     return(
     <Navbar bg="light" expand="lg">
         <Container>
-            <Navbar.Brand className='text-link' href=""><FaCookieBite /> Dolcha</Navbar.Brand>
+            <Link className='text-brand'  to="/"><Navbar.Brand href=""><FaCookieBite /> Dolcha</Navbar.Brand></Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
