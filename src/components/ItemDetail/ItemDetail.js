@@ -7,6 +7,8 @@ import { Container } from '@material-ui/core';
 import ItemCount from '../ItemListContainer/ItemCount';
 import { CardActions } from '@material-ui/core';
 import './ItemDetail.css';
+import {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -35,10 +37,22 @@ const useStyles = makeStyles((theme) => ({
 
 function ItemDetail({itemDetailDB}){
 
-    
-    
-    
     const classes = useStyles();
+
+    const [goCart , setGoCart] = useState(true)
+ 
+
+
+    function onAdd(cantidadAAgregar){
+        console.log(cantidadAAgregar)
+        setGoCart(false)
+    }
+
+
+
+
+
+
     
     return(
         
@@ -65,7 +79,12 @@ function ItemDetail({itemDetailDB}){
                                 <Grid item> 
                                 <CardActions className="card_actions">
                                     {/* <Typography variant="body2" style={{ cursor: 'pointer' }}>Añadir</Typography> */}
-                                    <ItemCount productStock={itemDetailDB.stock}/>
+                                    
+                                    {goCart ? (
+                                    <ItemCount productStock={itemDetailDB.stock} onAdd={onAdd} />
+                                    ) : (
+                                    <Link to="/cart" className="btnIraCarrito"><ButtonBase >Ir al Carrito</ButtonBase></Link>
+                                    )}
                                 </CardActions>
                                 </Grid>
                             </Grid>

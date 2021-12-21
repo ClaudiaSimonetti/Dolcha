@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 import './NavBar.css';
 
 
+
 function NavBar(){
     return(
     <Navbar bg="light" expand="lg">

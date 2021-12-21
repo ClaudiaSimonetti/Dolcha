@@ -6,8 +6,8 @@ import macarronSurtido from '../assets/img/macarronSurtido_640.jpg';
 import macarronNaranjayLimon from '../assets/img/macarronNaranjayLimon_640.jpg';
 
 const dataBaseProducts=[
-    {id:1, name:"torta de arandanos", image: tortaArandanos, description:"biscochuelo de chocolate relleno de crema y capa superior de arandanos", category:"torta",price:2700, stock:5},
-    {id:2, name:"torta bombon", image: tortaChocolate, description:"biscochuelo de chocolate con relleno de dulce de leche", category:"torta",price:2800, stock:10},
+    {id:1, name:"torta de arandanos", image: tortaArandanos, description:"bizcochuelo de chocolate relleno de crema y capa superior de arandanos", category:"torta",price:2700, stock:5},
+    {id:2, name:"torta bombon", image: tortaChocolate, description:"bizcochuelo de chocolate con relleno de dulce de leche", category:"torta",price:2800, stock:10},
     {id:3, name:"galletas chipy", image: galletasChip, description:"galletas crocantes con chips de chocolate negro", category:"galleta",price:2900, stock:15},
     {id:4, name:"chocomuffins", image: muffin, description:"muffins de chocolate con chips de chocolate blanco y negro (pack x6)", category:"muffin",price:3000, stock:20},
     {id:5, name:"surtido de macarrones", image: macarronSurtido, description:"macarrones de frutilla, dulce de leche, chocolate y menta (pack x6)", category:"macarron",price:3100, stock:25},

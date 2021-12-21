@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 
 
 
-function ItemCount({productStock}){
+function ItemCount({productStock, onAdd}){
     const [ count, SetCount ]= useState(1);
 
     const handlerIncrease=()=>{
@@ -25,7 +25,7 @@ function ItemCount({productStock}){
             <Button variant="contained" color="secondary" onClick={handlerDecrease}>-</Button>
             <Button>{count}</Button>
             <Button variant="contained" color="secondary" onClick={handlerIncrease}>+</Button>
-            <Button variant="contained" color="primary">Agregar a carrito</Button> 
+            <Button variant="contained" color="primary" onClick={()=>onAdd(count)}>Agregar a carrito</Button> 
         </>
     )
 }
