@@ -9,8 +9,8 @@ import { CardActions } from '@material-ui/core';
 import './ItemDetail.css';
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
-
-
+import { CartContext } from '../CartContext/CartContext';
+import { useContext } from 'react';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,30 +33,21 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-
-
 function ItemDetail({itemDetailDB}){
 
     const classes = useStyles();
 
     const [goCart , setGoCart] = useState(true)
- 
 
+    const {cartList, AddToCart} = useContext(CartContext)
 
-    function onAdd(cantidadAAgregar){
-        console.log(cantidadAAgregar)
+    function onAdd(quantityToAdd){
+        console.log(quantityToAdd)
         setGoCart(false)
+        AddToCart({...itemDetailDB, cantidad:quantityToAdd})
     }
 
-
-
-
-
-
-    
     return(
-        
-
         <Container maxWidth="sm">
             <div className={classes.root}>
                 <Paper className={classes.paper}>
@@ -79,7 +70,6 @@ function ItemDetail({itemDetailDB}){
                                 <Grid item> 
                                 <CardActions className="card_actions">
                                     {/* <Typography variant="body2" style={{ cursor: 'pointer' }}>Añadir</Typography> */}
-                                    
                                     {goCart ? (
                                     <ItemCount productStock={itemDetailDB.stock} onAdd={onAdd} />
                                     ) : (
@@ -88,7 +78,6 @@ function ItemDetail({itemDetailDB}){
                                 </CardActions>
                                 </Grid>
                             </Grid>
-
                         </Grid>
                     </Grid>
                 </Paper>
@@ -96,6 +85,5 @@ function ItemDetail({itemDetailDB}){
         </Container>
     )
         }
-
 
 export default ItemDetail;
