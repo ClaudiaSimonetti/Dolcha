@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
+import Button from '@material-ui/core/Button';
 import { Container } from '@material-ui/core';
 import ItemCount from '../ItemListContainer/ItemCount';
 import { CardActions } from '@material-ui/core';
@@ -73,7 +74,7 @@ function ItemDetail({itemDetailDB}){
                                     {goCart ? (
                                     <ItemCount productStock={itemDetailDB.stock} onAdd={onAdd} />
                                     ) : (
-                                    <Link to="/cart" className="btnIraCarrito"><ButtonBase >Ir al Carrito</ButtonBase></Link>
+                                    <Link to="/cart" className="btnIraCarrito"><Button variant="contained" color="secondary">Terminar mi compra</Button></Link>
                                     )}
                                 </CardActions>
                                 </Grid>

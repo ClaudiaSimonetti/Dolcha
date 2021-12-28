@@ -11,6 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 import Fab from '@material-ui/core/Fab';
+import { Button } from '@material-ui/core';
 
 
 const StyledTableCell = withStyles((theme) => ({
@@ -39,10 +40,12 @@ const useStyles = makeStyles({
 });
 
 
+
 function Cart(){
     const classes = useStyles();
 
-    const {cartList, DeleteCart } = useContext(CartContext)
+    const {cartList, DeleteCart, DeleteItem, TotalPrice } = useContext(CartContext)
+    const total = TotalPrice()
 
     return(
         <div>
@@ -64,13 +67,14 @@ function Cart(){
                                 <StyledTableCell align="right">{productAddedToCart.name}</StyledTableCell>
                                 <StyledTableCell align="right">{productAddedToCart.price}</StyledTableCell>
                                 <StyledTableCell align="right">{productAddedToCart.cantidad}</StyledTableCell>
-                                <StyledTableCell align="right">Eliminar</StyledTableCell>
+                                <Button align="right"onClick={()=>{DeleteItem(productAddedToCart.id)}}>Eliminar</Button>
                             </StyledTableRow>
                         ))}
                     </TableBody>
                 </Table>
             </TableContainer>
             <br/>
+            <StyledTableCell align="right">{total}</StyledTableCell>
             <Fab variant="extended" onClick={DeleteCart}>Vaciar</Fab>
 </div>
     )
