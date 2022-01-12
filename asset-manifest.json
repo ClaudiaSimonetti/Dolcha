@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/dolcha/static/css/main.18b5926e.chunk.css",
-    "main.js": "/dolcha/static/js/main.40c5b75e.chunk.js",
-    "main.js.map": "/dolcha/static/js/main.40c5b75e.chunk.js.map",
-    "runtime-main.js": "/dolcha/static/js/runtime-main.a4f5fb05.js",
-    "runtime-main.js.map": "/dolcha/static/js/runtime-main.a4f5fb05.js.map",
-    "static/js/2.cead39c0.chunk.js": "/dolcha/static/js/2.cead39c0.chunk.js",
-    "static/js/2.cead39c0.chunk.js.map": "/dolcha/static/js/2.cead39c0.chunk.js.map",
-    "static/js/3.1441aeab.chunk.js": "/dolcha/static/js/3.1441aeab.chunk.js",
-    "static/js/3.1441aeab.chunk.js.map": "/dolcha/static/js/3.1441aeab.chunk.js.map",
+    "main.css": "/dolcha/static/css/main.b30e1f6f.chunk.css",
+    "main.js": "/dolcha/static/js/main.2b2c9aac.chunk.js",
+    "main.js.map": "/dolcha/static/js/main.2b2c9aac.chunk.js.map",
+    "runtime-main.js": "/dolcha/static/js/runtime-main.d6b8f48a.js",
+    "runtime-main.js.map": "/dolcha/static/js/runtime-main.d6b8f48a.js.map",
+    "static/js/2.f250bd57.chunk.js": "/dolcha/static/js/2.f250bd57.chunk.js",
+    "static/js/2.f250bd57.chunk.js.map": "/dolcha/static/js/2.f250bd57.chunk.js.map",
+    "static/js/3.8c32b006.chunk.js": "/dolcha/static/js/3.8c32b006.chunk.js",
+    "static/js/3.8c32b006.chunk.js.map": "/dolcha/static/js/3.8c32b006.chunk.js.map",
     "index.html": "/dolcha/index.html",
-    "static/css/main.18b5926e.chunk.css.map": "/dolcha/static/css/main.18b5926e.chunk.css.map",
-    "static/js/2.cead39c0.chunk.js.LICENSE.txt": "/dolcha/static/js/2.cead39c0.chunk.js.LICENSE.txt",
+    "static/css/main.b30e1f6f.chunk.css.map": "/dolcha/static/css/main.b30e1f6f.chunk.css.map",
+    "static/js/2.f250bd57.chunk.js.LICENSE.txt": "/dolcha/static/js/2.f250bd57.chunk.js.LICENSE.txt",
     "static/media/galletasChip.8451f33c.jpg": "/dolcha/static/media/galletasChip.8451f33c.jpg",
     "static/media/macarronNaranjayLimon_640.79dc057f.jpg": "/dolcha/static/media/macarronNaranjayLimon_640.79dc057f.jpg",
     "static/media/macarronSurtido_640.86c18856.jpg": "/dolcha/static/media/macarronSurtido_640.86c18856.jpg",
@@ -20,9 +20,9 @@
     "static/media/tortaChocolate.915bae08.jpg": "/dolcha/static/media/tortaChocolate.915bae08.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a4f5fb05.js",
-    "static/js/2.cead39c0.chunk.js",
-    "static/css/main.18b5926e.chunk.css",
-    "static/js/main.40c5b75e.chunk.js"
+    "static/js/runtime-main.d6b8f48a.js",
+    "static/js/2.f250bd57.chunk.js",
+    "static/css/main.b30e1f6f.chunk.css",
+    "static/js/main.2b2c9aac.chunk.js"
   ]
 }
