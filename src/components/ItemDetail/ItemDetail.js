@@ -60,23 +60,22 @@ function ItemDetail({itemDetailDB}){
                         </Grid>
                         <Grid item xs={12} lg={12} sm container>
                             <Grid item xs container direction="column" spacing={2}>
-                            <Grid item xs>
-                                <Typography className="textCard" gutterBottom variant="h5">{itemDetailDB.name}</Typography>
-                                <Typography className="textCard" variant="body2" gutterBottom>{itemDetailDB.description}</Typography>
-                                <Grid item>
-                                    <Typography variant="subtitle1">$ {itemDetailDB.price}</Typography>
-                                </Grid>   
+                                <Grid item xs>
+                                    <Typography className="textCard" gutterBottom variant="h5">{itemDetailDB.name}</Typography>
+                                    <Typography className="textCard" variant="body2" gutterBottom>{itemDetailDB.description}</Typography>
+                                    <Grid item>
+                                        <Typography variant="subtitle1">$ {itemDetailDB.price}</Typography>
+                                    </Grid>   
                                     <Typography variant="body2" color="textSecondary">{itemDetailDB.stock} unidades disponibles</Typography>
-                            </Grid>
+                                </Grid>
                                 <Grid item> 
-                                <CardActions className="card_actions">
-                                    {/* <Typography variant="body2" style={{ cursor: 'pointer' }}>Añadir</Typography> */}
-                                    {goCart ? (
-                                    <ItemCount productStock={itemDetailDB.stock} onAdd={onAdd} />
-                                    ) : (
-                                    <Link to="/cart" className="btnIraCarrito"><Button variant="contained" color="secondary">Terminar mi compra</Button></Link>
-                                    )}
-                                </CardActions>
+                                    <Grid item xs={12} lg={8} className="card_actions">
+                                        {goCart ? (
+                                        <ItemCount productStock={itemDetailDB.stock} onAdd={onAdd} />
+                                        ) : (
+                                        <Link to="/cart" className="btnIraCarrito"><Button variant="contained" color="secondary">Terminar mi compra</Button></Link>
+                                        )}
+                                    </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -85,6 +84,6 @@ function ItemDetail({itemDetailDB}){
             </div>
         </Container>
     )
-        }
+}
 
 export default ItemDetail;

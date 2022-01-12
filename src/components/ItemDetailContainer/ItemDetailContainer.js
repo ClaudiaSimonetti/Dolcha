@@ -27,8 +27,7 @@ function ItemDetailContainer(){
 
     return(
         <div>
-        {loading ? <p><CircularProgress/> Cargando...</p> : <ItemDetail itemDetailDB={item}/>}
-        {/* <ItemDetail itemDetailDB={item}/> */}
+            {loading ? <p><CircularProgress/> Cargando...</p> : <ItemDetail itemDetailDB={item}/>}
         </div>
     )
 }

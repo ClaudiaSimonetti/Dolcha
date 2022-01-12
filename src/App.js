@@ -6,6 +6,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Cart from './components/Cart/Cart';
 import { Navigate } from 'react-router-dom';
 import CartContextProvider from './components/CartContext/CartContext';
+import Form from './components/Form/Form';
 
 function App() {
   return (
@@ -38,6 +39,12 @@ function App() {
               exact
               path="/cart"
               element={<Cart />}
+              
+            />
+            <Route
+              exact
+              path="/form"
+              element={<Form />}
               
             />
           </Routes>

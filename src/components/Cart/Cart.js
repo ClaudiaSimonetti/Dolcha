@@ -9,10 +9,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
-import Fab from '@material-ui/core/Fab';
+import { Box } from '@material-ui/core';
 import { Button } from '@material-ui/core';
-
+import {Link} from 'react-router-dom';
+import {FaTrashAlt} from'react-icons/fa'
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -39,8 +39,6 @@ const useStyles = makeStyles({
     },
 });
 
-
-
 function Cart(){
     const classes = useStyles();
 
@@ -49,34 +47,42 @@ function Cart(){
 
     return(
         <div>
-            <TableContainer component={Paper}>
+            <TableContainer component={Paper} className='tableContainerCart'>
                 <Table className={classes.table} aria-label="customized table">
                     <TableHead>
                         <TableRow>
                             <StyledTableCell>Imagen</StyledTableCell>
-                            <StyledTableCell align="right">Producto</StyledTableCell>
-                            <StyledTableCell align="right">Precio</StyledTableCell>
-                            <StyledTableCell align="right">Cantidad</StyledTableCell>
-                            <StyledTableCell align="right">Eliminar</StyledTableCell>
+                            <StyledTableCell align="center">Producto</StyledTableCell>
+                            <StyledTableCell align="center">Precio</StyledTableCell>
+                            <StyledTableCell align="center">Cantidad</StyledTableCell>
+                            <StyledTableCell align="center">Eliminar</StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {cartList.map((productAddedToCart) => (
                             <StyledTableRow key={productAddedToCart.id}>
                                 <StyledTableCell component="th" scope="row"><img className="imgCart" alt="img" src={productAddedToCart.image} /></StyledTableCell>
-                                <StyledTableCell align="right">{productAddedToCart.name}</StyledTableCell>
-                                <StyledTableCell align="right">{productAddedToCart.price}</StyledTableCell>
-                                <StyledTableCell align="right">{productAddedToCart.cantidad}</StyledTableCell>
-                                <Button align="right"onClick={()=>{DeleteItem(productAddedToCart.id)}}>Eliminar</Button>
+                                <StyledTableCell align="left">{productAddedToCart.name}</StyledTableCell>
+                                <StyledTableCell align="center">{productAddedToCart.price}</StyledTableCell>
+                                <StyledTableCell align="center">{productAddedToCart.cantidad}</StyledTableCell>
+                                <StyledTableCell aria-label="delete" align="center" onClick={()=>{DeleteItem(productAddedToCart.id)}}><FaTrashAlt /></StyledTableCell>
                             </StyledTableRow>
                         ))}
                     </TableBody>
+                    <StyledTableCell align="center"></StyledTableCell>
+                    <StyledTableCell align="right"></StyledTableCell>
+                    <StyledTableCell align="center">{total}</StyledTableCell>
                 </Table>
             </TableContainer>
-            <br/>
-            <StyledTableCell align="right">{total}</StyledTableCell>
-            <Fab variant="extended" onClick={DeleteCart}>Vaciar</Fab>
-</div>
+            <Box  >
+                {total!==0 ? 
+                (<Link to='/Form' className='linkBtnFinalize'>
+                    <Button variant="outlined" color="secondary">Finalizar compra</Button>
+                </Link>)
+                :(' ')}
+                <Button variant="outlined" onClick={DeleteCart}>Vaciar Carrito</Button>
+            </Box>
+        </div>
     )
 }
 

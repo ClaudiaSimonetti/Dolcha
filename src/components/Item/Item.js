@@ -9,8 +9,6 @@ import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
 import './Item.css';
 
-
-
 const useStyles = makeStyles({
     root: {
         maxWidth: 345,
@@ -40,8 +38,7 @@ function Item({product}){
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                <Link className="text-link-verDetalle" to={`/detalle/${product.id}`}><Typography variant="body2" style={{ cursor: 'pointer' }}>+ VER DETALLE</Typography></Link>
-                    {/* <ItemCount productStock={product.stock}/> */}
+                    <Link className="text-link-verDetalle" to={`/detalle/${product.id}`}><Typography variant="body2" style={{ cursor: 'pointer' }}>+ VER DETALLE</Typography></Link>
                 </CardActions>  
             </Card>
         </div>
