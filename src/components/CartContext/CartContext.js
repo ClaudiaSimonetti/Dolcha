@@ -13,12 +13,13 @@ function CartContextProvider({children}){
     function AddToCart(item){
         const index = cartList.findIndex(itemList=>itemList.id === item.id)
         if(index >-1){
-            const oldQuantity= cartList[index].cantidad
+            const oldQuantity= cartList[index].quantity
             cartList.splice(index , 1)
-            setCartList ([...cartList, {...item, cantidad: item.cantidad + oldQuantity}])
+            setCartList ([...cartList, {...item, quantity: item.quantity + oldQuantity}])
         }else{
             setCartList ([...cartList, item])
         }
+
     }
 
     function DeleteCart(){
@@ -31,13 +32,13 @@ function CartContextProvider({children}){
 
     function TotalPrice(){
         let totalPrice = 0 
-        cartList.forEach(itemList => {totalPrice += (itemList.price * itemList.cantidad)});
+        cartList.forEach(itemList => {totalPrice += (itemList.price * itemList.quantity)});
         return totalPrice
     }
 
     function QuantityItemsCart(){
         let totalQuantity = 0
-        cartList.forEach(itemList=>{totalQuantity += itemList.cantidad})
+        cartList.forEach(itemList=>{totalQuantity += itemList.quantity})
         return totalQuantity
     }
 

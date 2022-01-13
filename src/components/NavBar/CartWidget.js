@@ -8,7 +8,7 @@ function CartWidget(){
     
     return(
         <div>
-            {quantityItems >= 1 ? <FaShoppingCart  /> : " "}
+            {quantityItems >= 1 ? <FaShoppingCart  /> : " "} 
             {quantityItems >= 1 ? quantityItems : " "}
         </div>
     )

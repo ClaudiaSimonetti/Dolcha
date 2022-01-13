@@ -5,22 +5,30 @@ import { FaCookieBite } from 'react-icons/fa';
 import CartWidget from './CartWidget';
 import {Link} from 'react-router-dom';
 import './NavBar.css';
+import { useState } from 'react';
 
 
 
 function NavBar(){
+
+    const[expanded, setExpanded]=useState(false)
+
+
+
+
+
     return(
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" expanded={expanded}>
         <Container>
             <Link className='text-brand'  to="/"><Navbar.Brand href=""><FaCookieBite /> Dolcha</Navbar.Brand></Link>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={()=>setExpanded(expanded?false:'expanded')} />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto">
-                    <Link className='text-link' to="/" href="">Home</Link>
-                    <Link className='text-link' to="/categoria/torta" href="#link">Tortas</Link>
-                    <Link className='text-link' to="/categoria/galleta" href="">Galletas</Link>
-                    <Link className='text-link' to="/categoria/muffin" href="">Muffins</Link>
-                    <Link className='text-link' to="/categoria/macarron" href="">Macarrones</Link>
+                <Nav className="me-auto" >
+                    <Link className='text-link' to="/" href="" onClick={()=>setExpanded(false)}>Home</Link>
+                    <Link className='text-link' to="/categoria/torta" href="#link"onClick={()=>setExpanded(false)}>Tortas</Link>
+                    <Link className='text-link' to="/categoria/galleta" href=""onClick={()=>setExpanded(false)}>Galletas</Link>
+                    <Link className='text-link' to="/categoria/muffin" href=""onClick={()=>setExpanded(false)}>Muffins</Link>
+                    <Link className='text-link' to="/categoria/macarron" href=""onClick={()=>setExpanded(false)}>Macarrones</Link>
                 </Nav>
                 <Link className='text-link' to="/cart"><CartWidget /> </Link>    
             </Navbar.Collapse>

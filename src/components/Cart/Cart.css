@@ -1,6 +1,11 @@
 .imgCart{
     width: 80px;
     height: auto;
+    border-radius: 5%;
+}
+
+.imgRow{
+    width: 10%;
 }
 
 .linkBtnFinalize{
@@ -10,4 +15,18 @@
 .tableContainerCart{
     text-transform: capitalize;
     
+}
+
+.containerBtnCart{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px;
+    width: auto;
+}
+
+.containerTable{
+    padding-top: 20px;
+    padding-bottom: 20px;
 }

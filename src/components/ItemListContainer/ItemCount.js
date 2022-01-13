@@ -34,7 +34,7 @@ function ItemCount({productStock, onAdd}){
                     <Button>{count}</Button>
                     <Button variant="contained" color="secondary" onClick={handlerIncrease}>+</Button>
                 </Box>    
-                <Button variant="contained" color="primary"  onClick={()=>onAdd(count)}>Agregar a carrito</Button>
+                <Button variant="contained" color="primary" onClick={()=>onAdd(count)}>Agregar a carrito</Button>
             </Container>
         </div>
     )

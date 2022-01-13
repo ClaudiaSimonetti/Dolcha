@@ -7,6 +7,7 @@ import Cart from './components/Cart/Cart';
 import { Navigate } from 'react-router-dom';
 import CartContextProvider from './components/CartContext/CartContext';
 import Form from './components/Form/Form';
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
             />
           </Routes>
         </center>
+        <Footer />
       </BrowserRouter>
     </CartContextProvider>
   );

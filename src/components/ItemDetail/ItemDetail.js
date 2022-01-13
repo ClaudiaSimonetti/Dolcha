@@ -45,11 +45,11 @@ function ItemDetail({itemDetailDB}){
     function onAdd(quantityToAdd){
         console.log(quantityToAdd)
         setGoCart(false)
-        AddToCart({...itemDetailDB, cantidad:quantityToAdd})
+        AddToCart({...itemDetailDB, quantity:quantityToAdd})
     }
 
     return(
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" className='containerItemDetail'>
             <div className={classes.root}>
                 <Paper className={classes.paper}>
                     <Grid container spacing={0}>
@@ -73,7 +73,7 @@ function ItemDetail({itemDetailDB}){
                                         {goCart ? (
                                         <ItemCount productStock={itemDetailDB.stock} onAdd={onAdd} />
                                         ) : (
-                                        <Link to="/cart" className="btnIraCarrito"><Button variant="contained" color="secondary">Terminar mi compra</Button></Link>
+                                        <Link to="/cart" className="btnIraCarrito"><Button variant="contained" color="secondary">Ir al carrito</Button></Link>
                                         )}
                                     </Grid>
                                 </Grid>

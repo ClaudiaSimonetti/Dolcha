@@ -9,6 +9,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+
 import { Box } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import {Link} from 'react-router-dom';
@@ -46,41 +47,42 @@ function Cart(){
     const total = TotalPrice()
 
     return(
-        <div>
+        <div className='containerTable'>
             <TableContainer component={Paper} className='tableContainerCart'>
                 <Table className={classes.table} aria-label="customized table">
                     <TableHead>
                         <TableRow>
-                            <StyledTableCell>Imagen</StyledTableCell>
-                            <StyledTableCell align="center">Producto</StyledTableCell>
-                            <StyledTableCell align="center">Precio</StyledTableCell>
+                            <StyledTableCell>Producto</StyledTableCell>
                             <StyledTableCell align="center">Cantidad</StyledTableCell>
+                            <StyledTableCell align="center">Precio</StyledTableCell>
                             <StyledTableCell align="center">Eliminar</StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {cartList.map((productAddedToCart) => (
                             <StyledTableRow key={productAddedToCart.id}>
-                                <StyledTableCell component="th" scope="row"><img className="imgCart" alt="img" src={productAddedToCart.image} /></StyledTableCell>
-                                <StyledTableCell align="left">{productAddedToCart.name}</StyledTableCell>
-                                <StyledTableCell align="center">{productAddedToCart.price}</StyledTableCell>
-                                <StyledTableCell align="center">{productAddedToCart.cantidad}</StyledTableCell>
+                                <StyledTableCell className='imgRow'component="th" scope="row"><img className="imgCart" alt="img" src={productAddedToCart.image} />{productAddedToCart.name}</StyledTableCell>
+                                <StyledTableCell align="center">{productAddedToCart.quantity}</StyledTableCell>
+                                <StyledTableCell align="center">$ {productAddedToCart.price}</StyledTableCell>
                                 <StyledTableCell aria-label="delete" align="center" onClick={()=>{DeleteItem(productAddedToCart.id)}}><FaTrashAlt /></StyledTableCell>
                             </StyledTableRow>
                         ))}
                     </TableBody>
                     <StyledTableCell align="center"></StyledTableCell>
                     <StyledTableCell align="right"></StyledTableCell>
-                    <StyledTableCell align="center">{total}</StyledTableCell>
+                    <StyledTableCell align="center">$ {total}</StyledTableCell>
                 </Table>
             </TableContainer>
-            <Box  >
+            <Box className='containerBtnCart'>
+                <Link to='/Home' className='linkBtnFinalize'>
+                <Button color="primary">Seguir comprando</Button>
+                </Link><br/>
+                <Button variant="outlined" onClick={DeleteCart}>Vaciar carrito</Button><br/>
                 {total!==0 ? 
                 (<Link to='/Form' className='linkBtnFinalize'>
-                    <Button variant="outlined" color="secondary">Finalizar compra</Button>
+                    <Button variant="outlined" color="secondary">Generar compra</Button>
                 </Link>)
                 :(' ')}
-                <Button variant="outlined" onClick={DeleteCart}>Vaciar Carrito</Button>
             </Box>
         </div>
     )
