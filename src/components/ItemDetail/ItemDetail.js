@@ -8,7 +8,7 @@ import { Container } from '@material-ui/core';
 import ItemCount from '../ItemListContainer/ItemCount';
 import { CardActions } from '@material-ui/core';
 import './ItemDetail.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../CartContext/CartContext';
 import { useContext } from 'react';
@@ -34,19 +34,30 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function ItemDetail({itemDetailDB}){
+function ItemDetail({itemDetailDB, productStock}){
 
     const classes = useStyles();
 
     const [goCart , setGoCart] = useState(true)
+    const [stock, setStock]=useState(0)
 
     const {cartList, AddToCart} = useContext(CartContext)
 
     function onAdd(quantityToAdd){
-        console.log(quantityToAdd)
         setGoCart(false)
         AddToCart({...itemDetailDB, quantity:quantityToAdd})
     }
+
+    useEffect(()=>{
+        if(Object.keys(itemDetailDB)){
+            let inCart=cartList.find(item=>item.id===itemDetailDB.id)
+            setStock(itemDetailDB.stock - (inCart ? inCart.quantity : 0))
+        }
+
+    },[])
+
+    
+
 
     return(
         <Container maxWidth="sm" className='containerItemDetail'>
@@ -66,12 +77,12 @@ function ItemDetail({itemDetailDB}){
                                     <Grid item>
                                         <Typography variant="subtitle1">$ {itemDetailDB.price}</Typography>
                                     </Grid>   
-                                    <Typography variant="body2" color="textSecondary">{itemDetailDB.stock} unidades disponibles</Typography>
+                                    <Typography variant="body2" color="textSecondary">{stock} unidades disponibles</Typography>
                                 </Grid>
                                 <Grid item> 
                                     <Grid item xs={12} lg={8} className="card_actions">
                                         {goCart ? (
-                                        <ItemCount productStock={itemDetailDB.stock} onAdd={onAdd} />
+                                        <ItemCount productStock={stock} onAdd={onAdd} />
                                         ) : (
                                         <Link to="/cart" className="btnIraCarrito"><Button variant="contained" color="secondary">Ir al carrito</Button></Link>
                                         )}

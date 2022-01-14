@@ -23,7 +23,7 @@ function ItemDetailContainer(){
         .then(response => setItem({id: response.id, ...response.data()}))
         .catch(error=>alert("Ha ocurrido un error", error))
         .finally(()=>setLoading(false))
-    })
+    },[])
 
     return(
         <div>

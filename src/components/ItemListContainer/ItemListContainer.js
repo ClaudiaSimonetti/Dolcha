@@ -16,9 +16,6 @@ function ItemListContainer({greeting}){
 
     const [producto, setProducto]=useState({})
     
-
-    console.log(producto)
-    console.log(productsDB)
     
 
     // useEffect(()=>{

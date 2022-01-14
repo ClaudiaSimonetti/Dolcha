@@ -4,8 +4,11 @@ import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import './ItemCount.css'
 
+
 function ItemCount({productStock, onAdd}){
     const [ count, SetCount ]= useState(1);
+
+   
 
     const handlerIncrease=()=>{
         if(count<productStock){
@@ -34,7 +37,7 @@ function ItemCount({productStock, onAdd}){
                     <Button>{count}</Button>
                     <Button variant="contained" color="secondary" onClick={handlerIncrease}>+</Button>
                 </Box>    
-                <Button variant="contained" color="primary" onClick={()=>onAdd(count)}>Agregar a carrito</Button>
+                <Button variant="contained" color="primary" disabled={productStock===0} onClick={()=>onAdd(count)}>Agregar a carrito</Button>
             </Container>
         </div>
     )
