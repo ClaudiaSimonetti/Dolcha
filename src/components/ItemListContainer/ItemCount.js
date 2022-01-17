@@ -1,14 +1,12 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
-import './ItemCount.css'
-
+import './ItemCount.css';
 
 function ItemCount({productStock, onAdd}){
+    
     const [ count, SetCount ]= useState(1);
-
-   
 
     const handlerIncrease=()=>{
         if(count<productStock){
@@ -24,16 +22,9 @@ function ItemCount({productStock, onAdd}){
     
     return(
         <div className='containerItemCount'>
-            <Container >
-                <Box 
-                    maxWidth='xs'
-                    sx={{display:'flex',
-                    flexDirection:'row',
-                    pb: 2,
-                    justifyContent:"center",
-                    }}
-                >
-                    <Button variant="contained" color="secondary" onClick={handlerDecrease}>-</Button>
+            <Container>
+                <Box className='boxItemCount'>
+                    <Button className='btnCount' variant="contained" color="secondary" onClick={handlerDecrease}>-</Button>
                     <Button>{count}</Button>
                     <Button variant="contained" color="secondary" onClick={handlerIncrease}>+</Button>
                 </Box>    

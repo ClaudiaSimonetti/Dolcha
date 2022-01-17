@@ -1,11 +1,10 @@
 import { TextField, Box, Container} from '@material-ui/core';
-import Fab from '@material-ui/core/Fab';
-import { Button } from '@material-ui/core';
-import {getFirestore, collection, addDoc, updateDoc, doc, writeBatch, Timestamp} from 'firebase/firestore';
+import {getFirestore, collection, addDoc, Timestamp} from 'firebase/firestore';
 import {useState} from 'react';
 import { CartContext } from '../CartContext/CartContext';
 import { useContext } from 'react'
 import './Form.css'
+import Swal from 'sweetalert2';
 
 function Form(){
 
@@ -33,7 +32,7 @@ function Form(){
 
         const expressions = {
             regexText: /^[a-zA-ZÀ-ÿ\s]{2,20}$/,
-            regexEmail: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+            regexEmail: /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/,
             regexNumber: /^\d{1,11}$/,
         }
     
@@ -75,110 +74,36 @@ function Form(){
         (dataForm.email2===dataForm.email)  
         ){
         
+            let order={}
 
-        let order={}
+            order.date=Timestamp.fromDate(new Date())
 
-        order.date=Timestamp.fromDate(new Date())
+            order.buyer=dataForm
+            order.total=TotalPrice();
+            order.items=cartList.map(cartItem=>{
+                const id=cartItem.id;
+                const name=cartItem.name;
+                const price=cartItem.price*cartItem.cantidad;
 
-        order.buyer=dataForm
-        order.total=TotalPrice();
-        order.items=cartList.map(cartItem=>{
-            const id=cartItem.id;
-            const name=cartItem.name;
-            const price=cartItem.price*cartItem.cantidad;
+                return {id, name, price}
+            })
 
-            return {id, name, price}
-        })
-
-        
-
-        //Generar orden
-        const db=getFirestore()
-        const ordersCollection=collection(db,'orders')
-        addDoc(ordersCollection, order)
-        .then(response=>setIdOrder(response.id))
-        .catch(error=>alert("Ha ocurrido un error", error))
-        .finally(()=>{DeleteCart()
-                    setDataForm({name:'', phone:'', email:'',email2:''})
-        })
-
-        if(idOrder.length !== 0){alert('Formulario enviado con éxito.Su numero de orden es:'+' '+ idOrder)}
-
-        }
+            //Generar orden
+            const db=getFirestore()
+            const ordersCollection=collection(db,'orders')
+            addDoc(ordersCollection, order)
+            .then(response=>{setIdOrder(response.id) })
+            .catch(error=>Swal.fire({icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'Ha ocurrido un error'}, error))
+            .finally(()=>{DeleteCart()
+                        setDataForm({name:'', phone:'', email:'',email2:''})
+            })  
+            Swal.fire({icon:'success',
+                    title: 'Formulario enviado con éxito',
+                            })  
+        }    
     }
-
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // function OrderGeneration(e){
-    //     e.preventDefault()
-
-        
-        //Nuevo objeto
-        // let order={}
-
-        // order.date=Timestamp.fromDate(new Date())
-
-        // order.buyer=dataForm
-        // order.total=TotalPrice();
-        // order.items=cartList.map(cartItem=>{
-        //     const id=cartItem.id;
-        //     const name=cartItem.name;
-        //     const price=cartItem.price*cartItem.cantidad;
-
-        //     return {id, name, price}
-        // })
-
-        
-
-        //Generar orden
-        // const db=getFirestore()
-        // const ordersCollection=collection(db,'orders')
-        // addDoc(ordersCollection, order)
-        // .then(response=>setIdOrder(response.id))
-        // .catch(error=>alert("Ha ocurrido un error", error))
-        // .finally(()=>{DeleteCart()
-        //             setDataForm({name:'', phone:'', email:''})
-        // })
-
-        //Modificar Update
-        // const docModify=doc(db, 'items', 'QpJWnEp4pzk9Oiki5NiO')
-        // updateDoc(docModify, {
-        //     stock:29
-
-        // })
-        // .then(response=>console.log('modificado'))
-
-        //Escritura por lotes
-        // const docModify=doc(db, 'items', 'QpJWnEp4pzk9Oiki5NiO')
-        // const docModify1=doc(db, 'items', 'TBf95S5TGllzCLDQ2q9c')
-
-        // const batch = writeBatch(db)
-        
-        // batch.update(docModify, {
-        //     stock:28
-        // })
-        // batch.update(docModify1,{
-        //     stock:24
-        // })
-        // batch.commit()
-
-    // };
-
-
 
     return(
         <div>
@@ -199,7 +124,6 @@ function Form(){
                     onSubmit={OrderGeneration}
                     onChange={handleChange}
                     sx={{ mt: 2, 
-                        // textAlign: "center" 
                     }}
                 >
                     <TextField 
@@ -242,11 +166,10 @@ function Form(){
                         value={dataForm.email2} 
                     />
                     <p className='pError'>{errorEmail2}</p><br/>
+                    {idOrder.length !== 0 && 'Su numero de orden es:'+ idOrder}
                     <button className='btnForm'>Finalizar Compra</button>
                 </Box>
             </Container>
-            {/* {idOrder.length !== 0 && 'Su numero de orden es:'+' '+ idOrder} */}
-            
         </div> 
     )
 }

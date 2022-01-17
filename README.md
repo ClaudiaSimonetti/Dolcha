@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Dolcha Backery Ecommerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue creado con React. [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![Pasteleria](public/img/video.gif)
 
-In the project directory, you can run:
+## Dependencias y Funciones
 
-### `npm start`
+Para este proyecto se utilizaron las siguientes dependencias:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### React Bootstrap
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `npm install react-bootstrap bootstrap@5.1.3`
 
-### `npm test`
+Se utilizó la librería React Bootstrap para crear el Navbar. Lo que lo convierte en una excelente opcion en la interfaz de usuario permitiendo navegar a traves de él en las distintas categorías.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### React Icons
 
-### `npm run build`
+### `npm install react-icons --save`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para todos los iconos se utilizó React Icons que por su practicidad permitio que se pudieran adaptar de manera consistente con el estilo de la aplicacion.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Material-UI
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm install @material-ui/core`
 
-### `npm run eject`
+Para el desarrollo de las carateristicas interactivas, se utilizó Material-UI. Material-UI es un libreria que permitió dinamismo con un diseño atractivo e intuitivo reflejado en todas las secciones de la aplicación.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Sweetalert2
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `npm install sweetalert2`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Para el desarrollo de alertas se utilizó la libreria Sweetalert que permite mostrar los mensajes al usuario de manera sencilla y con un diseño agradable a la vista.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Firebase
 
-## Learn More
+### `npm install firebase`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Firebase se utilizó como sincronizador de datos, permitiendo tener acceso a una base de datos en tiempo real y generando un codigo identificador por cada compra de generada en la aplciación. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Como descargar el sitio desde Github
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Para descargar el sitio desde Github debe realizar los siguientes pasos:
 
-### Analyzing the Bundle Size
+1. Desde la terminal escribir el siguiente comando:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+git clone https://github.com/ClaudiaSimonetti/dolcha.git
+```
+2. Luego, instalar las dependencias con:
+```
+npm install
+```
+3. Para poder navegar dentro de la aplicacion deberá escribir el siguiente comando:
+```
+npm start
+```
 
-### Making a Progressive Web App
+## Acceso al sitio desde la URL
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Aquí podras acceder en forma directa a la pagina [Dolcha Backery](https://claudiasimonetti.github.io/dolcha/)

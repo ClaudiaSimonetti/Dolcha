@@ -8,6 +8,7 @@ import { Navigate } from 'react-router-dom';
 import CartContextProvider from './components/CartContext/CartContext';
 import Form from './components/Form/Form';
 import Footer from './components/Footer/Footer'
+import Home from './components/Home/Home'
 
 function App() {
   return (
@@ -24,12 +25,12 @@ function App() {
             <Route
               exact
               path="/"
-              element={<ItemListContainer greeting="Bienvenido a Dolcha Bakery"/>}
-            /> 
+              element={<><Home/><ItemListContainer greeting='Todos nuestros productos' /></>}
+            />
             <Route
               exact
               path="/categoria/:idCategory"
-              element={<ItemListContainer greeting="Bienvenido a Dolcha Bakery"/>}
+              element={<ItemListContainer />}
             /> 
             <Route
               exact

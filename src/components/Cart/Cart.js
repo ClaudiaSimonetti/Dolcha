@@ -9,11 +9,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
 import { Box } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import {Link} from 'react-router-dom';
-import {FaTrashAlt} from'react-icons/fa'
+import {FaTrashAlt} from'react-icons/fa';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -44,6 +43,7 @@ function Cart(){
     const classes = useStyles();
 
     const {cartList, DeleteCart, DeleteItem, TotalPrice } = useContext(CartContext)
+    
     const total = TotalPrice()
 
     return(

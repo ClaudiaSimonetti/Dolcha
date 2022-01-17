@@ -13,18 +13,18 @@ function Footer(){
             <Container fluid className="text-center text-md-left">
                 <Row>
                     <Col md="6">
-                        <h5 className="title">Dolcha Backery</h5>
+                        <h5>Dolcha Backery</h5>
                         <p>Descubre los secretos de la mejor pasteleria de Buenos Aires.</p>
                         <p>Tortas | Galletas | Muffins | Macarrones</p>   
                     </Col>
                     <Col md="6">
-                        <h5 className="title">Seguinos en nuestras redes:</h5>
+                        <h5>Seguinos en nuestras redes:</h5>
                         <ul>
-                            <p className="list-unstyled">
-                                <FaFacebook size={28}/>
-                                <FaInstagram size={28}/>
-                                <FaTwitterSquare size={28}/>
-                                <FaWhatsapp size={28}/>
+                            <p>
+                                <FaFacebook className="list-unstyled" size={28} />
+                                <FaInstagram className="list-unstyled" size={28} />
+                                <FaTwitterSquare className="list-unstyled" size={28} />
+                                <FaWhatsapp className="list-unstyled" size={28}/>
                             </p>
                             <p>Copyright Dolcha Backery</p>
                         </ul>

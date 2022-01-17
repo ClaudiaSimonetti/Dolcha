@@ -1,7 +1,6 @@
-/* .containerItemCount{
-    border:0.5px solid lightsteelblue;
-    padding: 20PX;
-    align-items: center;
-    max-width: 100%;
-    
-} */
+.boxItemCount{
+    display:flex;
+    flex-direction:row;
+    padding-bottom: 20px;
+    justify-content:center;
+}

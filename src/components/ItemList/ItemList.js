@@ -1,5 +1,5 @@
 import { Container } from '@material-ui/core';
-import Item from '../Item/Item'
+import Item from '../Item/Item';
 import { Grid } from '@material-ui/core';
 
 function ItemList({products}){

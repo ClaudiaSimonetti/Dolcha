@@ -1,16 +1,12 @@
 import { createContext, useState } from 'react';
-
+import Swal from 'sweetalert2';
 
 export const CartContext = createContext([])
 
 function CartContextProvider({children}){
+    
     const [cartList , setCartList] = useState([])
 
-    console.log(cartList)
-
-    // function AddToCart(item){
-    //     setCartList([...cartList, item])
-    // }
     function AddToCart(item){
         const index = cartList.findIndex(itemList=>itemList.id === item.id)
         if(index >-1){
@@ -27,7 +23,8 @@ function CartContextProvider({children}){
     }
 
     function DeleteItem(id){
-        setCartList(cartList.filter(itemList=>id !== itemList.id))   
+        setCartList(cartList.filter(itemList=>id !== itemList.id))
+        Swal.fire('Producto eliminado de carrito')   
     }
 
     function TotalPrice(){

@@ -5,10 +5,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-// import ItemCount from '../ItemListContainer/ItemCount';
 import {Link} from 'react-router-dom';
 import './Item.css';
-import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles({
     root: {

@@ -1,8 +1,9 @@
-import { CircularProgress } from "@material-ui/core"
+import { CircularProgress } from "@material-ui/core";
 
 function CircularProgress(){
+    
     return(
-        <CircularProgress disableShrink />
+        <CircularProgress />
     )
 }
 

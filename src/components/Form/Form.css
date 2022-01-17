@@ -10,4 +10,6 @@
 
 .pError{
     color: red;
+    text-align: left;
+    width:500px;
 }

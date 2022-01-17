@@ -1,6 +1,6 @@
 import { FaShoppingCart } from 'react-icons/fa'; 
 import { CartContext } from '../CartContext/CartContext';
-import { useContext } from 'react'
+import { useContext } from 'react';
 
 function CartWidget(){
     const { QuantityItemsCart } = useContext(CartContext)

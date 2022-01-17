@@ -6,12 +6,12 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Button from '@material-ui/core/Button';
 import { Container } from '@material-ui/core';
 import ItemCount from '../ItemListContainer/ItemCount';
-import { CardActions } from '@material-ui/core';
 import './ItemDetail.css';
 import {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../CartContext/CartContext';
 import { useContext } from 'react';
+import Swal from 'sweetalert2';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 1500,
     },
     image: {
-    width: '100%', //la img tiene el 100% de ancho del tamaño de la etiqueta.
+    //la img tiene el 100% de ancho del tamaño de la etiqueta.    
+    width: '100%', 
     height: 350,
     },
     img: {
@@ -34,11 +35,12 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function ItemDetail({itemDetailDB, productStock}){
+function ItemDetail({itemDetailDB}){
 
     const classes = useStyles();
 
     const [goCart , setGoCart] = useState(true)
+
     const [stock, setStock]=useState(0)
 
     const {cartList, AddToCart} = useContext(CartContext)
@@ -46,6 +48,11 @@ function ItemDetail({itemDetailDB, productStock}){
     function onAdd(quantityToAdd){
         setGoCart(false)
         AddToCart({...itemDetailDB, quantity:quantityToAdd})
+        Swal.fire({
+            icon: 'success',
+            title: `${itemDetailDB.name}`,
+            text: 'Producto agregado al carrito',
+        })
     }
 
     useEffect(()=>{
@@ -53,11 +60,7 @@ function ItemDetail({itemDetailDB, productStock}){
             let inCart=cartList.find(item=>item.id===itemDetailDB.id)
             setStock(itemDetailDB.stock - (inCart ? inCart.quantity : 0))
         }
-
-    },[])
-
-    
-
+    },[cartList,itemDetailDB])
 
     return(
         <Container maxWidth="sm" className='containerItemDetail'>
@@ -72,8 +75,8 @@ function ItemDetail({itemDetailDB, productStock}){
                         <Grid item xs={12} lg={12} sm container>
                             <Grid item xs container direction="column" spacing={2}>
                                 <Grid item xs>
-                                    <Typography className="textCard" gutterBottom variant="h5">{itemDetailDB.name}</Typography>
-                                    <Typography className="textCard" variant="body2" gutterBottom>{itemDetailDB.description}</Typography>
+                                    <Typography gutterBottom variant="h5">{itemDetailDB.name}</Typography>
+                                    <Typography variant="body2" gutterBottom>{itemDetailDB.description}</Typography>
                                     <Grid item>
                                         <Typography variant="subtitle1">$ {itemDetailDB.price}</Typography>
                                     </Grid>   
