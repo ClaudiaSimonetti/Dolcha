@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/dolcha/static/css/main.d96c0255.chunk.css",
-    "main.js": "/dolcha/static/js/main.e248d2dd.chunk.js",
-    "main.js.map": "/dolcha/static/js/main.e248d2dd.chunk.js.map",
+    "main.css": "/dolcha/static/css/main.1eef57ae.chunk.css",
+    "main.js": "/dolcha/static/js/main.e055fdb9.chunk.js",
+    "main.js.map": "/dolcha/static/js/main.e055fdb9.chunk.js.map",
     "runtime-main.js": "/dolcha/static/js/runtime-main.67952db9.js",
     "runtime-main.js.map": "/dolcha/static/js/runtime-main.67952db9.js.map",
     "static/js/2.b116c151.chunk.js": "/dolcha/static/js/2.b116c151.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.31a212fa.chunk.js": "/dolcha/static/js/3.31a212fa.chunk.js",
     "static/js/3.31a212fa.chunk.js.map": "/dolcha/static/js/3.31a212fa.chunk.js.map",
     "index.html": "/dolcha/index.html",
-    "static/css/main.d96c0255.chunk.css.map": "/dolcha/static/css/main.d96c0255.chunk.css.map",
+    "static/css/main.1eef57ae.chunk.css.map": "/dolcha/static/css/main.1eef57ae.chunk.css.map",
     "static/js/2.b116c151.chunk.js.LICENSE.txt": "/dolcha/static/js/2.b116c151.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.67952db9.js",
     "static/js/2.b116c151.chunk.js",
-    "static/css/main.d96c0255.chunk.css",
-    "static/js/main.e248d2dd.chunk.js"
+    "static/css/main.1eef57ae.chunk.css",
+    "static/js/main.e055fdb9.chunk.js"
   ]
 }
