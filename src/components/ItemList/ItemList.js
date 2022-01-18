@@ -8,7 +8,7 @@ function ItemList({products}){
         <Container>
             <Grid container spacing={3}>
                 {products.map((prod)=> 
-                    <Grid item xs={12} sm={8} md={6} lg={4}>
+                    <Grid key={prod.id} item xs={12} sm={8} md={6} lg={4}>
                         <Item product={prod} /> 
                     </Grid>
                 ) }

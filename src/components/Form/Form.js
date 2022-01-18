@@ -153,7 +153,7 @@ function Form(){
                         variant="outlined" 
                         fullWidth 
                         margin="normal" 
-                        value={dataForm.email} 
+                        value={dataForm.errorEmail} 
                     />
                     <p className='pError'>{errorEmail}</p>
                     <TextField 
@@ -163,9 +163,9 @@ function Form(){
                         variant="outlined" 
                         fullWidth 
                         margin="normal" 
-                        value={dataForm.email2} 
+                        value={dataForm.errorEmail2} 
                     />
-                    <p className='pError'>{errorEmail2}</p><br/>
+                    <p className='pError'>{errorEmail2}</p>
                     {idOrder.length !== 0 && 'Su numero de orden es:'+ idOrder}
                     <button className='btnForm'>Finalizar Compra</button>
                 </Box>

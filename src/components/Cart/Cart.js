@@ -67,10 +67,12 @@ function Cart(){
                                 <StyledTableCell aria-label="delete" align="center" onClick={()=>{DeleteItem(productAddedToCart.id)}}><FaTrashAlt /></StyledTableCell>
                             </StyledTableRow>
                         ))}
+                        <TableRow>
+                            <StyledTableCell align="center"></StyledTableCell>
+                            <StyledTableCell align="right"></StyledTableCell>
+                            <StyledTableCell align="center">$ {total}</StyledTableCell>
+                        </TableRow>
                     </TableBody>
-                    <StyledTableCell align="center"></StyledTableCell>
-                    <StyledTableCell align="right"></StyledTableCell>
-                    <StyledTableCell align="center">$ {total}</StyledTableCell>
                 </Table>
             </TableContainer>
             <Box className='containerBtnCart'>

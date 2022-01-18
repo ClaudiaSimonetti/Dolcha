@@ -10,3 +10,12 @@
 .containerItemDetail{
     margin-top: 50px;
 }
+
+.text-itemDetail{
+    text-transform: lowercase;
+}
+
+.text-itemDetail:first-letter{
+    text-transform: uppercase;
+}
+

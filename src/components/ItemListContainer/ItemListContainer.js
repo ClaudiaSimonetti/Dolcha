@@ -41,7 +41,7 @@ function ItemListContainer({greeting}){
     return(
         <div>
             <h1 className='textItemListContainer'>{greeting}</h1> 
-            {loading ?  <p><CircularProgress/>Cargando...</p> :  <ItemList products={productsDB}/> }
+            {loading ?  <><CircularProgress/>Cargando...</> :  <ItemList products={productsDB}/> }
         </div>
     )
 }

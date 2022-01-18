@@ -24,11 +24,11 @@ function ItemDetailContainer(){
                                 title: 'Oops...',
                                 text: 'Ha ocurrido un error'}, error))
         .finally(()=>setLoading(false))
-    })
+    },[idProduct])
 
     return(
         <div>
-            {loading ? <p><CircularProgress/> Cargando...</p> : <ItemDetail itemDetailDB={item}/>}
+            {loading ? <><CircularProgress/> Cargando...</> : <ItemDetail itemDetailDB={item}/>}
         </div>
     )
 }
