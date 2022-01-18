@@ -2,7 +2,7 @@
 
 Este proyecto fue creado con React. [Create React App](https://github.com/facebook/create-react-app).
 
-![Pasteleria](public/img/video.gif)
+![Pasteleria](public/img/dolcha_img.jpg)
 
 ## Dependencias y Funciones
 
