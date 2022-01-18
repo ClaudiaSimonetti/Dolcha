@@ -119,6 +119,7 @@ function Form(){
                     paddingBottom: 3,
                 }}
             >
+                <h2 className='textForm'>Formulario de compra</h2>
                 <Box
                     component="form"
                     onSubmit={OrderGeneration}

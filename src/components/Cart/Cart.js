@@ -48,6 +48,7 @@ function Cart(){
 
     return(
         <div className='containerTable'>
+            <h2 className='textCart'>Carrito</h2>
             <TableContainer component={Paper} className='tableContainerCart'>
                 <Table className={classes.table} aria-label="customized table">
                     <TableHead>
